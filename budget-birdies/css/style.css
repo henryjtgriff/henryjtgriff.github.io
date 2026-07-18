@@ -1,0 +1,297 @@
+/* ===========================================================
+   Budget Birdies — shared styles
+   Palette: sage green (brand/eco), warm greys, off-white
+   Type: Poppins (display, friendly-rounded) + Inter (body/utility)
+   Signature: golf-ball dimple texture used as product art +
+   dotted "fairway trail" dividers
+   =========================================================== */
+
+:root{
+  --bg:        #F7F7F3;
+  --bg-card:   #EFEFE8;
+  --bg-card-2: #E4E9DE;
+  --green:     #6FA85B;
+  --green-dark:#3B5A31;
+  --green-deep:#2C4425;
+  --grey:      #6E6E64;
+  --grey-light:#D9D9D0;
+  --ink:       #24241E;
+  --white:     #FFFFFF;
+  --shadow: 0 8px 24px rgba(43, 68, 37, 0.10);
+  --radius: 18px;
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,h2,h3,h4{
+  font-family: "Poppins", system-ui, sans-serif;
+  color: var(--green-deep);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.01em;
+}
+
+h1{ font-size: clamp(2.1rem, 4.2vw, 3.4rem); font-weight: 700; }
+h2{ font-size: clamp(1.5rem, 2.6vw, 2.1rem); font-weight: 600; }
+h3{ font-size: 1.15rem; font-weight: 600; }
+
+p{ margin: 0 0 1em; color: var(--ink); }
+a{ color: inherit; text-decoration: none; }
+
+img{ max-width: 100%; display: block; }
+
+.wrap{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* -------- nav -------- */
+.site-nav{
+  position: sticky; top:0; z-index: 50;
+  background: rgba(247,247,243,0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--grey-light);
+}
+.site-nav .wrap{
+  display:flex; align-items:center; justify-content:space-between;
+  padding-top: 14px; padding-bottom: 14px;
+}
+.brand{ display:flex; align-items:center; gap:10px; }
+.brand img{ width: 42px; height:42px; border-radius:50%; }
+.brand span{
+  font-family:"Poppins",sans-serif; font-weight:700; font-size:1.15rem;
+  color: var(--green-deep);
+}
+.nav-links{ display:flex; gap: 28px; font-weight:500; }
+.nav-links a{
+  position:relative; padding: 4px 0; color: var(--ink);
+}
+.nav-links a::after{
+  content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px;
+  background: var(--green); transform: scaleX(0); transform-origin:left;
+  transition: transform .2s ease;
+}
+.nav-links a:hover::after, .nav-links a[aria-current="page"]::after{ transform: scaleX(1); }
+.nav-links a[aria-current="page"]{ color: var(--green-dark); font-weight:700; }
+
+/* -------- buttons -------- */
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-family:"Poppins",sans-serif;
+  font-size: 0.95rem;
+  border: none;
+  cursor:pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn-primary{
+  background: var(--green-dark); color: var(--white);
+  box-shadow: var(--shadow);
+}
+.btn-primary:hover{ background: var(--green-deep); transform: translateY(-2px); }
+
+.btn-buy{
+  width:100%;
+  background: var(--green); color: var(--white);
+  box-shadow: 0 4px 12px rgba(111,168,91,0.35);
+  justify-content:center;
+}
+.btn-buy:hover{ background: var(--green-dark); transform: translateY(-1px); }
+
+.btn-outline{
+  background: transparent; color: var(--green-deep);
+  border: 1.5px solid var(--green-dark);
+}
+.btn-outline:hover{ background: var(--green-dark); color:#fff; }
+
+/* -------- pills / trust strip -------- */
+.pill-row{ display:flex; flex-wrap:wrap; gap:10px; margin: 18px 0; }
+.pill{
+  background: var(--bg-card-2);
+  color: var(--green-deep);
+  font-size: 0.82rem; font-weight:600;
+  padding: 7px 14px; border-radius: 999px;
+  display:inline-flex; align-items:center; gap:6px;
+}
+
+/* -------- hero -------- */
+.hero{ padding: 72px 0 56px; }
+.hero .wrap{
+  display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items:center;
+}
+.hero-eyebrow{
+  color: var(--green); font-weight:700; letter-spacing:0.06em;
+  text-transform: uppercase; font-size: 0.78rem; margin-bottom: 10px; display:block;
+}
+.hero-art{
+  position:relative; display:flex; align-items:center; justify-content:center;
+}
+.hero-art .ring{
+  width: min(340px, 90%); aspect-ratio:1;
+  border-radius:50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff, var(--bg-card-2) 70%);
+  box-shadow: var(--shadow);
+  display:flex; align-items:center; justify-content:center;
+  padding: 28px;
+}
+.hero-art img{ width:100%; border-radius:50%; }
+
+/* -------- fairway trail divider -------- */
+.trail{
+  display:flex; justify-content:center; gap: 14px; margin: 8px 0 48px;
+}
+.trail span{
+  width:8px; height:8px; border-radius:50%;
+  background: var(--green);
+  opacity: 0.55;
+}
+.trail span:nth-child(3n){ opacity: 0.9; }
+
+/* -------- sections -------- */
+section{ padding: 56px 0; }
+.section-alt{ background: var(--bg-card); }
+.section-head{ max-width: 640px; margin: 0 auto 36px; text-align:center; }
+.section-head p{ color: var(--grey); }
+
+/* -------- how it works -------- */
+.steps{
+  display:grid; grid-template-columns: repeat(3,1fr); gap: 28px;
+}
+.step{
+  background: var(--white); border-radius: var(--radius);
+  padding: 28px 24px; box-shadow: var(--shadow);
+}
+.step-num{
+  font-family:"Poppins",sans-serif; font-weight:700; color: var(--green);
+  font-size: 0.85rem; letter-spacing: 0.05em;
+}
+
+/* -------- product grid -------- */
+.grid{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+}
+.card{
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  display:flex; flex-direction:column;
+}
+.card-art{
+  aspect-ratio: 4/3;
+  background: linear-gradient(160deg, var(--bg-card-2), var(--bg-card));
+  display:flex; align-items:center; justify-content:center;
+  position:relative;
+}
+/* golf-ball dimple texture, drawn with layered radial gradients */
+.ball{
+  width: 96px; height:96px; border-radius:50%;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.9), rgba(255,255,255,0) 30%),
+    repeating-radial-gradient(circle at 20% 20%, rgba(59,90,49,0.18) 0 2px, transparent 2.5px 10px),
+    radial-gradient(circle at 65% 70%, #ffffff, var(--bg-card-2) 75%);
+  box-shadow: inset -6px -8px 14px rgba(59,90,49,0.20), 0 6px 14px rgba(43,68,37,0.18);
+}
+.card-art.ball-3 .ball{ width:64px; height:64px; }
+.ball-cluster{ display:flex; gap: -10px; }
+.ball-cluster .ball + .ball{ margin-left:-22px; }
+
+.placeholder-tag{
+  position:absolute; top:10px; right:10px;
+  background: rgba(255,255,255,0.85);
+  color: var(--grey);
+  font-size: 0.68rem; font-weight:600;
+  padding: 3px 9px; border-radius: 999px;
+}
+
+.card-body{ padding: 20px 20px 22px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.card-body h3{ margin-bottom:0; }
+.card-desc{ color: var(--grey); font-size: 0.92rem; margin-bottom: 6px; }
+.card-price{
+  font-family:"Poppins",sans-serif; font-weight:700; color: var(--green-dark);
+  font-size: 1.2rem; margin-bottom: 4px;
+}
+.card-ship{ font-size: 0.78rem; color: var(--grey); margin-bottom: 10px; }
+
+/* -------- about page -------- */
+.about-hero{ padding: 56px 0 24px; }
+.story{
+  display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; align-items:center;
+}
+.story .ring{
+  border-radius:50%; overflow:hidden; box-shadow: var(--shadow);
+  background: var(--bg-card-2);
+}
+.values{
+  display:grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 12px;
+}
+.value{
+  background: var(--white); border-radius: var(--radius);
+  padding: 24px; box-shadow: var(--shadow);
+}
+.value h3{ color: var(--green-dark); }
+
+.areas{
+  display:flex; gap:14px; flex-wrap:wrap; margin-top: 8px;
+}
+.area-card{
+  background: var(--bg-card-2); border-radius: 14px;
+  padding: 16px 20px; flex:1; min-width: 220px;
+}
+
+/* -------- footer -------- */
+footer{
+  background: var(--green-deep);
+  color: #EDF2E9;
+  padding: 44px 0 30px;
+  margin-top: 40px;
+}
+footer .wrap{
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap: 24px;
+}
+footer a{ color:#EDF2E9; }
+footer .brand span{ color:#fff; }
+.footer-col h4{ color:#fff; font-size:0.9rem; margin-bottom:10px; }
+.footer-col p, .footer-col a{ color: #C9D8C2; font-size:0.92rem; }
+.foot-note{
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin-top: 30px; padding-top: 18px;
+  font-size: 0.8rem; color: #A9BFA0;
+  text-align:center;
+}
+
+/* -------- responsive -------- */
+@media (max-width: 880px){
+  .hero .wrap{ grid-template-columns: 1fr; text-align:center; }
+  .hero-art{ order:-1; }
+  .steps, .grid, .values{ grid-template-columns: 1fr 1fr; }
+  .story{ grid-template-columns: 1fr; }
+  .nav-links{ gap:16px; font-size:0.9rem; }
+}
+@media (max-width: 560px){
+  .steps, .grid, .values{ grid-template-columns: 1fr; }
+  footer .wrap{ flex-direction:column; }
+}
+
+/* -------- accessibility -------- */
+a:focus-visible, button:focus-visible{
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce){
+  *{ transition:none !important; scroll-behavior:auto !important; }
+}
