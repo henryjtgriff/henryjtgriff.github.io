@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://henryjtgriff.github.io/budget-birdies/sitemap.xml
