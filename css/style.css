@@ -390,8 +390,24 @@ footer .brand span{ color:#fff; }
   .best-value{ display:block; margin-left:0; margin-top:4px; width:fit-content; }
 }
 
+/* -------- site status notice -------- */
+.notice-band{
+  background: var(--green-900);
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  padding: 11px 16px;
+}
+.hero-full .notice-band{
+  align-self: stretch;
+  margin: -40px -24px 26px;
+}
+
 /* -------- homepage: full hero + scroll reveal -------- */
-html{ scroll-snap-type: y proximity; }
+html{ scroll-snap-type: y proximity; scroll-padding-top: 63px; }
 .snap{ scroll-snap-align: start; }
 
 .hero-full{
