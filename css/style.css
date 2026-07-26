@@ -76,6 +76,11 @@ img{ max-width: 100%; display: block; }
   font-family:"Poppins",sans-serif; font-weight:700; font-size:1.1rem;
   color: var(--green-900);
 }
+.nav-toggle{
+  display:none; flex-direction:column; justify-content:center; gap:5px;
+  width:34px; height:34px; padding:0; border:none; background:none; cursor:pointer; flex-shrink:0;
+}
+.nav-toggle span{ display:block; width:100%; height:2px; border-radius:2px; background: var(--green-900); }
 .nav-links{ display:flex; gap: 26px; font-weight:500; align-items:center; }
 .nav-links a{ position:relative; padding: 10px 2px; color: var(--ink); display:inline-block; }
 .nav-links a::after{
@@ -85,6 +90,24 @@ img{ max-width: 100%; display: block; }
 }
 .nav-links a:hover::after, .nav-links a[aria-current="page"]::after{ transform: scaleX(1); }
 .nav-links a[aria-current="page"]{ color: var(--green-700); font-weight:700; }
+
+@media (max-width: 680px){
+  .nav-toggle{ display:flex; }
+  .site-nav .wrap{ position:relative; flex-wrap:wrap; }
+  .brand span{ font-size:1rem; }
+  .nav-links{
+    display:none;
+    position:absolute; top:100%; left:0; right:0;
+    flex-direction:column; align-items:stretch; gap:0;
+    background: var(--white);
+    border-bottom:1px solid var(--border);
+    box-shadow: var(--shadow);
+    padding: 4px 24px 14px;
+  }
+  .site-nav.nav-open .nav-links{ display:flex; }
+  .nav-links a{ padding:13px 2px; }
+  .nav-links a::after{ display:none; }
+}
 
 /* -------- buttons -------- */
 .btn{
@@ -381,6 +404,11 @@ html{ scroll-snap-type: y proximity; }
   display:flex; align-items:center; gap:16px; margin-bottom: 18px;
 }
 .hero-full .wordmark img{ width: 78px; height:78px; }
+.hero-logo{
+  width: clamp(84px, 16vw, 140px);
+  height: auto;
+  margin: 0 0 10px;
+}
 .hero-full h1{
   font-size: clamp(2.6rem, 9vw, 5.2rem);
   margin: 0; color: var(--green-900);

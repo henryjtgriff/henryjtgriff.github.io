@@ -46,6 +46,7 @@
       <img src="assets/logo.png" alt="Budget Birdies logo">
       <span>Budget Birdies</span>
     </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links">
       <a href="index.html" aria-current="page">Home</a>
       <a href="shop.html">Shop</a>
@@ -56,6 +57,7 @@
 </nav>
 
 <header class="hero-full snap">
+  <img class="hero-logo" src="assets/logo.png" alt="Budget Birdies logo">
   <h1>Budget Birdies</h1>
   <p class="sub">Rescued golf balls. Fair prices. Zero waste.</p>
   <p style="max-width:480px; color:var(--grey-700);">Hand-checked, second-hand golf balls collected locally around the West Midlands and Bristol — good balls deserve another round, and your wallet deserves a break.</p>
@@ -82,7 +84,7 @@
       <a class="feature-card" href="shop-titleist.html">
         <div class="card-art">
           <span class="feature-tag">🔥 HOT</span>
-          <div class="ball"></div>
+          <img class="product-img" src="assets/products/titleist.png" alt="Used Titleist golf ball">
         </div>
         <div class="feature-body">
           <h3>Titleist — Mint, 12 balls</h3>
@@ -93,7 +95,7 @@
       <a class="feature-card" href="shop-prime-picks.html">
         <div class="card-art">
           <span class="feature-tag">🔥 HOT</span>
-          <div class="ball"></div>
+          <img class="product-img" src="assets/products/prime-picks.png" alt="Prime Picks used golf ball">
         </div>
         <div class="feature-body">
           <h3>Prime Picks — 24 balls</h3>
@@ -104,7 +106,7 @@
       <a class="feature-card" href="shop-flashy-finds.html">
         <div class="card-art">
           <span class="feature-tag feature-tag-alt">🔥 POPULAR</span>
-          <div class="ball"></div>
+          <img class="product-img" src="assets/products/flashy-finds.png" alt="Flashy Finds neon used golf ball">
         </div>
         <div class="feature-body">
           <h3>Flashy Finds — 24 balls</h3>
@@ -193,6 +195,6 @@
   </div>
   <div class="foot-note">© <span class="yr"></span> Budget Birdies. All balls hand-checked before sale.</div>
 </footer>
-<script>document.querySelectorAll('.yr').forEach(function(e){e.textContent = new Date().getFullYear();});</script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
