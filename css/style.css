@@ -1,7 +1,7 @@
 /* ===========================================================
-   Budget Birdies — shared styles
+   Budget Birdies - shared styles
    Palette: white + a richer, more vibrant green ramp, plus two
-   accent hues (lime + sun) used sparingly for pop moments —
+   accent hues (lime + sun) used sparingly for pop moments,
    still fundamentally a green + white site, just livelier.
    Type: Poppins (display) + Inter (body/utility)
    Signature: golf-ball dimple texture + dotted "fairway trail" dividers
@@ -12,16 +12,16 @@
   --bg:        #FFFFFF;
   --surface:   #F1FAEF;   /* fresh minty warm-white (was neutral grey) */
   --surface-2: #E2F5DE;
-  --green-900: #0E2A15;   /* deep forest — footer, hero-dark sections, headings */
+  --green-900: #0E2A15;   /* deep forest - footer, hero-dark sections, headings */
   --green-800: #133D1B;
-  --green-700: #157A32;   /* punchy primary green — buttons, links (was muted olive) */
+  --green-700: #157A32;   /* punchy primary green - buttons, links (was muted olive) */
   --green-600: #1C9A3E;   /* vivid hover green */
-  --green-500: #3CB954;   /* fresh mid green — accents, badges */
-  --green-300: #9FE49B;   /* bright mint — dividers, soft fills */
-  --green-100: #E3F9E0;   /* pale mint wash — section variety */
-  --lime:      #CDF564;   /* NEW — vibrant chartreuse accent, sparing use */
-  --lime-dark: #7FB520;   /* deeper lime — readable text/icons on lime, or as its own accent */
-  --sun:       #FFC63C;   /* NEW — warm golden accent, sparing use (badges, highlights) */
+  --green-500: #3CB954;   /* fresh mid green - accents, badges */
+  --green-300: #9FE49B;   /* bright mint - dividers, soft fills */
+  --green-100: #E3F9E0;   /* pale mint wash - section variety */
+  --lime:      #CDF564;   /* NEW - vibrant chartreuse accent, sparing use */
+  --lime-dark: #7FB520;   /* deeper lime - readable text/icons on lime, or as its own accent */
+  --sun:       #FFC63C;   /* NEW - warm golden accent, sparing use (badges, highlights) */
   --grey-900:  #1D231B;
   --grey-700:  #4C5847;   /* secondary text */
   --grey-500:  #7C8A74;   /* muted text, mid borders */
@@ -512,7 +512,7 @@ html{ scroll-padding-top: 63px; }
   text-align:center; position:relative; overflow:hidden; padding: 40px 24px 80px;
 }
 
-/* faded photo backdrop — homepage hero, plus the .hero-photo modifier used on Shop/FAQ/About */
+/* faded photo backdrop - homepage hero, plus the .hero-photo modifier used on Shop/FAQ/About */
 .hero-full, .hero-photo{ position:relative; overflow:hidden; }
 .hero-full::before, .hero-photo::before{
   content:""; position:absolute; inset:-20px; z-index:0;
