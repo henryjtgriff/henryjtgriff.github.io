@@ -1,7 +1,8 @@
 /* ===========================================================
    Budget Birdies — shared styles
-   Palette: clean white + deep green, warm neutral greys only
-   (no pale/mid green tints — kept strictly to white + deep green)
+   Palette: white + a richer, more vibrant green ramp, plus two
+   accent hues (lime + sun) used sparingly for pop moments —
+   still fundamentally a green + white site, just livelier.
    Type: Poppins (display) + Inter (body/utility)
    Signature: golf-ball dimple texture + dotted "fairway trail" dividers
    =========================================================== */
@@ -9,24 +10,28 @@
 :root{
   --white:     #FFFFFF;
   --bg:        #FFFFFF;
-  --surface:   #F4F4F1;   /* neutral warm grey */
-  --surface-2: #EAEAE5;
-  --green-900: #142B18;   /* deepest — footer, hero-dark sections */
-  --green-800: #1B3B20;
-  --green-700: #1F4A26;   /* buttons, links, headings */
-  --green-600: #2C5E33;   /* hover states */
-  --green-500: #4C7A46;   /* mid sage — accents, badges */
-  --green-300: #A9C9A0;   /* soft sage — badge fills, dividers */
-  --green-100: #EBF1E6;   /* pale wash — used sparingly for section variety */
-  --grey-900:  #2A2A24;
-  --grey-700:  #55554D;   /* secondary text */
-  --grey-500:  #83837A;   /* muted text, mid borders */
-  --grey-400:  #9A9A90;
-  --grey-300:  #CBCBC2;
-  --border:    #E3E3DD;
-  --ink:       #1A1A16;
-  --shadow: 0 8px 24px rgba(20, 43, 24, 0.08);
+  --surface:   #F1FAEF;   /* fresh minty warm-white (was neutral grey) */
+  --surface-2: #E2F5DE;
+  --green-900: #0E2A15;   /* deep forest — footer, hero-dark sections, headings */
+  --green-800: #133D1B;
+  --green-700: #157A32;   /* punchy primary green — buttons, links (was muted olive) */
+  --green-600: #1C9A3E;   /* vivid hover green */
+  --green-500: #3CB954;   /* fresh mid green — accents, badges */
+  --green-300: #9FE49B;   /* bright mint — dividers, soft fills */
+  --green-100: #E3F9E0;   /* pale mint wash — section variety */
+  --lime:      #CDF564;   /* NEW — vibrant chartreuse accent, sparing use */
+  --lime-dark: #7FB520;   /* deeper lime — readable text/icons on lime, or as its own accent */
+  --sun:       #FFC63C;   /* NEW — warm golden accent, sparing use (badges, highlights) */
+  --grey-900:  #1D231B;
+  --grey-700:  #4C5847;   /* secondary text */
+  --grey-500:  #7C8A74;   /* muted text, mid borders */
+  --grey-400:  #98A48F;
+  --grey-300:  #CFDBC7;
+  --border:    #DBEAD4;
+  --ink:       #131810;
+  --shadow: 0 8px 24px rgba(14, 42, 21, 0.12);
   --radius: 16px;
+  --marquee-h: 48px;
 }
 
 *{ box-sizing: border-box; }
@@ -84,8 +89,8 @@ img{ max-width: 100%; display: block; }
 .nav-links{ display:flex; gap: 26px; font-weight:500; align-items:center; }
 .nav-links a{ position:relative; padding: 10px 2px; color: var(--ink); display:inline-block; }
 .nav-links a::after{
-  content:""; position:absolute; left:2px; right:2px; bottom:4px; height:2px;
-  background: var(--green-700); transform: scaleX(0); transform-origin:left;
+  content:""; position:absolute; left:2px; right:2px; bottom:4px; height:3px; border-radius:2px;
+  background: var(--lime-dark); transform: scaleX(0); transform-origin:left;
   transition: transform .2s ease;
 }
 .nav-links a:hover::after, .nav-links a[aria-current="page"]::after{ transform: scaleX(1); }
@@ -122,19 +127,25 @@ img{ max-width: 100%; display: block; }
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
 .btn-primary{
-  background: var(--green-700); color: var(--white);
+  background: linear-gradient(135deg, var(--green-600), var(--green-800));
+  color: var(--white);
   box-shadow: var(--shadow);
 }
-.btn-primary:hover{ background: var(--green-900); transform: translateY(-2px); }
+.btn-primary:hover{
+  background: linear-gradient(135deg, var(--green-700), var(--green-900));
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(14, 42, 21, 0.24);
+}
 
 .btn-buy{
   width:100%;
-  background: var(--green-700); color: var(--white);
+  background: linear-gradient(135deg, var(--green-600), var(--green-800));
+  color: var(--white);
   justify-content:center;
   font-size: 0.86rem;
   padding: 10px 16px;
 }
-.btn-buy:hover{ background: var(--green-900); }
+.btn-buy:hover{ background: linear-gradient(135deg, var(--green-700), var(--green-900)); }
 
 .btn-outline{
   background: transparent; color: var(--green-700);
@@ -153,6 +164,9 @@ img{ max-width: 100%; display: block; }
   padding: 6px 13px; border-radius: 999px;
   display:inline-flex; align-items:center; gap:6px;
 }
+.hero-full .pill-row .pill:nth-child(1){ background: var(--green-900); }
+.hero-full .pill-row .pill:nth-child(2){ background: var(--green-700); }
+.hero-full .pill-row .pill:nth-child(3){ background: var(--lime-dark); color: var(--green-900); }
 .pill-outline{
   background: var(--white);
   color: var(--green-700);
@@ -165,7 +179,7 @@ img{ max-width: 100%; display: block; }
   display:grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items:center;
 }
 .hero-eyebrow{
-  color: var(--green-700); font-weight:700; letter-spacing:0.06em;
+  color: var(--green-700); font-weight:800; letter-spacing:0.06em;
   text-transform: uppercase; font-size: 0.74rem; margin-bottom: 8px; display:block;
 }
 .hero h1{ margin-bottom: 0.35em; }
@@ -208,6 +222,10 @@ section{ padding: 52px 0; }
   padding: 22px; box-shadow: var(--shadow);
 }
 .value h3{ color: var(--green-700); }
+.values-compact{ max-width: 760px; margin-left:auto; margin-right:auto; gap: 14px; }
+.values-compact .value{ padding: 14px 18px; text-align:center; }
+.values-compact .value h3{ font-size: 0.92rem; margin-bottom: 4px; }
+.values-compact .value p{ font-size: 0.82rem; margin: 0; color: var(--grey-700); }
 
 /* -------- shop hub cards (Brands / Bundles) -------- */
 .hub-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 26px; }
@@ -220,7 +238,7 @@ section{ padding: 52px 0; }
 .hub-card .btn{ align-self:flex-start; margin-top:10px; }
 
 .brand-grid, .bundle-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap: 22px; }
-.bundle-grid{ grid-template-columns: repeat(3,1fr); }
+.brand-grid, .bundle-grid{ grid-template-columns: repeat(3,1fr); }
 .tile{
   background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 26px 20px; text-align:center; box-shadow: var(--shadow);
@@ -229,6 +247,7 @@ section{ padding: 52px 0; }
 .tile .ball{ margin-bottom: 4px; }
 .tile h3{ margin-bottom:2px; }
 .tile p{ color: var(--grey-700); font-size:0.86rem; margin-bottom: 6px; }
+.tile .btn{ margin-top:auto; }
 
 /* -------- product art (golf-ball dimple graphic, placeholder) -------- */
 .card-art{
@@ -266,6 +285,11 @@ section{ padding: 52px 0; }
 .product-hero .card-art{ border-radius: var(--radius); }
 .seo-copy{ color: var(--grey-700); font-size: 0.96rem; }
 .seo-copy strong{ color: var(--green-900); }
+.legal-copy{ padding-bottom: 60px; }
+.legal-copy h2{ margin-top: 34px; font-size: 1.15rem; }
+.legal-copy ol{ padding-left: 20px; margin: 0 0 1em; }
+.legal-copy li{ margin-bottom: 8px; }
+.legal-copy code{ background: var(--surface); padding: 1px 6px; border-radius: 5px; font-size: 0.88em; }
 
 .btn-short{ display:none; }
 
@@ -287,18 +311,29 @@ section{ padding: 52px 0; }
 .price-table tr:nth-child(even) td{ background: var(--surface); }
 .price-cell{ font-family:"Poppins",sans-serif; font-weight:700; color: var(--green-900); }
 .per-ball{ color: var(--grey-500); font-size: 0.78rem; display:block; margin-top:2px; font-weight:400; font-family:"Inter",sans-serif; }
+.buy-cell{ position:relative; }
 .buy-cell form{ margin:0; }
+.sold-out-label{ display:none; }
+/* sold-out state: applied by the stock sync script, driven by the Price Card */
+.price-table tr.sold-out{ opacity:0.55; }
+.price-table tr.sold-out .price-cell, .price-table tr.sold-out .per-ball{ text-decoration: line-through; }
+.price-table tr.sold-out .buy-cell form{ display:none; }
+.price-table tr.sold-out .sold-out-label{
+  display:inline-block; font-family:"Poppins",sans-serif; font-weight:700; font-size:0.78rem;
+  color: var(--grey-500); background: var(--surface); border: 1px solid var(--border);
+  padding: 9px 16px; border-radius: 999px;
+}
 .best-value{
   display:inline-block; margin-left:8px;
-  background: var(--green-700); color:#fff;
+  background: var(--sun); color: var(--green-900);
   font-size: 0.7rem; font-weight:700; padding:2px 8px; border-radius:999px;
   vertical-align: middle;
 }
 
 .grade-block{ margin-bottom: 34px; }
-.grade-block h3{
+.grade-block h3, .grade-block h4{
   display:flex; align-items:center; gap:10px;
-  color: var(--green-900);
+  color: var(--green-900); font-size:1rem; margin:0 0 4px;
 }
 .grade-badge{
   display:inline-flex; width:26px; height:26px; border-radius:50%;
@@ -306,9 +341,43 @@ section{ padding: 52px 0; }
   align-items:center; justify-content:center; font-family:"Poppins",sans-serif;
 }
 .grade-badge-mint{ background: var(--green-300); color: var(--green-900); }
-.grade-badge-a{ background: var(--green-500); color:#fff; }
+.grade-badge-a, .grade-badge-ap{
+  background: linear-gradient(135deg, var(--green-500), var(--green-700));
+  color:#fff; box-shadow: 0 0 0 3px var(--lime);
+}
 .grade-badge-b{ background: var(--grey-500); color:#fff; }
-.grade-desc{ color: var(--grey-700); font-size:0.86rem; margin: -6px 0 12px; }
+.grade-desc{ color: var(--grey-700); font-size:0.86rem; margin: -2px 0 12px; }
+
+/* model groups: a brand page can list several models, each with its own grade-blocks */
+.model-group{ margin-bottom: 44px; padding-bottom: 36px; border-bottom: 1px solid var(--border); }
+.model-group:last-child{ border-bottom:none; padding-bottom:0; margin-bottom:0; }
+.model-name{
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+  font-size:1.3rem; margin-bottom:16px;
+}
+.model-sub{ font-size:0.78rem; font-weight:500; color: var(--grey-500); }
+.model-note{
+  font-size:0.85rem; color: var(--grey-700); background: var(--surface);
+  border-radius: 10px; padding:10px 14px; margin: -8px 0 22px; max-width: fit-content;
+}
+
+/* -------- FAQ: grade comparison -------- */
+.grade-compare{
+  display:grid; grid-template-columns: 1fr 1fr; gap: 26px;
+  max-width: 760px; margin: 18px auto 0;
+}
+.grade-compare-card{
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow:hidden; box-shadow: var(--shadow); text-align:center;
+}
+.grade-compare-img{ width:100%; aspect-ratio: 1 / 1; object-fit:cover; display:block; }
+.grade-compare-label{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  font-family:"Poppins",sans-serif; font-weight:700; color: var(--green-900);
+  padding: 18px 16px 6px;
+}
+.grade-compare-card p{ padding: 0 20px 22px; margin:0; color: var(--grey-700); font-size:0.92rem; }
+@media (max-width: 680px){ .grade-compare{ grid-template-columns: 1fr; } }
 
 /* -------- FAQ -------- */
 .faq-list{ max-width: 760px; margin: 0 auto; display:flex; flex-direction:column; gap: 14px; }
@@ -346,14 +415,10 @@ section{ padding: 52px 0; }
   color: var(--green-900); margin:0; line-height:1.35;
 }
 .quote-panel span{ color: var(--green-700); font-size:0.82rem; font-weight:600; }
-.areas{ display:flex; gap:14px; flex-wrap:wrap; margin-top: 8px; }
-.area-card{
-  background: var(--white); border: 1px solid var(--border); border-radius: 14px;
-  padding: 16px 20px; flex:1; min-width: 220px;
-}
+.quote-panel .quote-note{ font-size:0.86rem; color: var(--grey-700); margin:0; line-height:1.5; font-weight:400; }
 
 /* -------- footer -------- */
-footer{ background: var(--green-900); color: #E7EEE4; padding: 40px 0 26px; margin-top: 30px; }
+footer{ background: var(--green-900); color: #E7EEE4; padding: 40px 0 26px; margin-top: 30px; border-top: 6px solid var(--lime); }
 footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap: 24px; }
 footer a{ color:#E7EEE4; }
 footer .brand span{ color:#fff; }
@@ -406,16 +471,57 @@ footer .brand span{ color:#fff; }
   margin: -40px -24px 26px;
 }
 
+/* -------- scrolling brand strip -------- */
+.brand-marquee{
+  height: var(--marquee-h);
+  overflow: hidden;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.brand-track{
+  display:flex; align-items:center; height:100%;
+  width: max-content;
+  animation: brand-scroll 26s linear infinite;
+}
+.brand-marquee:hover .brand-track{ animation-play-state: paused; }
+.brand-group{
+  display:flex; align-items:center; gap:36px;
+  flex-shrink:0; padding-right:36px;
+}
+.brand-group span{
+  font-family:"Poppins",sans-serif; font-weight:700; font-size:0.9rem;
+  letter-spacing:0.05em; text-transform:uppercase; color: var(--green-700);
+  white-space:nowrap;
+}
+.brand-group .dot{ color: var(--lime-dark); font-weight:400; }
+@keyframes brand-scroll{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce){
+  .brand-track{ animation:none; }
+}
+
 /* -------- homepage: full hero + scroll reveal -------- */
-html{ scroll-snap-type: y proximity; scroll-padding-top: 63px; }
-.snap{ scroll-snap-align: start; }
+html{ scroll-padding-top: 63px; }
 
 .hero-full{
-  min-height: calc(100svh - 63px);
-  min-height: calc(100vh - 63px);
+  min-height: calc(100svh - 63px - var(--marquee-h));
+  min-height: calc(100vh - 63px - var(--marquee-h));
   display:flex; flex-direction:column; align-items:center; justify-content:center;
-  text-align:center; position:relative; padding: 40px 24px 80px;
+  text-align:center; position:relative; overflow:hidden; padding: 40px 24px 80px;
 }
+
+/* faded photo backdrop — homepage hero, plus the .hero-photo modifier used on Shop/FAQ/About */
+.hero-full, .hero-photo{ position:relative; overflow:hidden; }
+.hero-full::before, .hero-photo::before{
+  content:""; position:absolute; inset:-20px; z-index:0;
+  background-image: url('../assets/hero/stock-boxes.jpg');
+  background-size: cover; background-position: center 35%;
+  filter: grayscale(0.6) blur(2px);
+  opacity: 0.1;
+}
+.hero-full > *, .hero-photo > *{ position:relative; z-index:1; }
 .hero-full .wordmark{
   display:flex; align-items:center; gap:16px; margin-bottom: 18px;
 }
@@ -442,17 +548,12 @@ html{ scroll-snap-type: y proximity; scroll-padding-top: 63px; }
   color: var(--green-700); font-size:0.72rem; font-weight:600;
   text-transform:uppercase; letter-spacing:0.08em;
 }
-.scroll-cue svg{ animation: bob 1.6s ease-in-out infinite; }
+.scroll-cue svg{ animation: bob 1.6s ease-in-out infinite; color: var(--lime-dark); }
 @keyframes bob{ 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(6px);} }
 
 /* -------- featured products -------- */
 .featured{ padding: 60px 0 56px; }
 .featured .section-head{ margin-bottom: 26px; }
-.hot-badge{
-  display:inline-flex; align-items:center; gap:5px;
-  background: var(--green-900); color:#fff; font-size:0.74rem; font-weight:700;
-  padding: 4px 11px; border-radius:999px; margin-bottom: 12px;
-}
 .feature-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-bottom: 30px; }
 .feature-card{
   background: var(--white); border:1px solid var(--border); border-radius: var(--radius);
@@ -461,12 +562,6 @@ html{ scroll-snap-type: y proximity; scroll-padding-top: 63px; }
 }
 .feature-card:hover{ transform: translateY(-3px); }
 .feature-card .card-art{ position:relative; }
-.feature-tag{
-  position:absolute; top:10px; left:10px;
-  background: var(--green-700); color:#fff; font-size:0.72rem; font-weight:700;
-  padding: 3px 10px; border-radius:999px;
-}
-.feature-tag-alt{ background: var(--green-500); }
 .feature-body{ padding: 16px 18px 20px; }
 .feature-body h3{ margin-bottom:2px; }
 .feature-body .fp{ color: var(--grey-700); font-size:0.85rem; margin-bottom:6px; }
@@ -492,7 +587,7 @@ html{ scroll-snap-type: y proximity; scroll-padding-top: 63px; }
   box-shadow: var(--shadow);
 }
 .mission-badge-2{ background: var(--green-700); }
-.mission-badge-3{ background: var(--green-500); }
+.mission-badge-3{ background: var(--sun); }
 .mission-stop h3{ margin-bottom:6px; }
 .mission-stop p{ color: var(--grey-700); font-size:0.9rem; }
 
@@ -505,6 +600,7 @@ html{ scroll-snap-type: y proximity; scroll-padding-top: 63px; }
 .stat-item .num{
   font-family:"Poppins",sans-serif; font-weight:800; font-size: clamp(2rem,4vw,2.8rem);
   color:#fff; display:block; margin-bottom:6px;
+  text-shadow: 0 0 28px rgba(205,245,100,0.45);
 }
 .stat-item p{ color:#BFD1BA; font-size:0.92rem; }
 .stat-band .btn-outline{ border-color:#fff; color:#fff; }
