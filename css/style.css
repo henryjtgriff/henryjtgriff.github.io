@@ -516,7 +516,7 @@ html{ scroll-padding-top: 63px; }
 .hero-full, .hero-photo{ position:relative; overflow:hidden; }
 .hero-full::before, .hero-photo::before{
   content:""; position:absolute; inset:-20px; z-index:0;
-  background-image: url('../assets/hero/stock-boxes.jpg');
+  background-image: url('../assets/hero/stock-boxes.webp');
   background-size: cover; background-position: center 35%;
   filter: grayscale(0.6) blur(2px);
   opacity: 0.1;

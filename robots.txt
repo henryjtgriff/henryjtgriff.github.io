@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://henryjtgriff.github.io/budget-birdies/sitemap.xml
+Sitemap: https://budgetbirdies.co.uk/sitemap.xml

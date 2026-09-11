@@ -1,63 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://henryjtgriff.github.io/budget-birdies/</loc>
+    <loc>https://budgetbirdies.co.uk/</loc>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://henryjtgriff.github.io/budget-birdies/shop.html</loc>
+    <loc>https://budgetbirdies.co.uk/shop.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://budgetbirdies.co.uk/shop-brands.html</loc>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://henryjtgriff.github.io/budget-birdies/shop-brands.html</loc>
+    <loc>https://budgetbirdies.co.uk/shop-bundles.html</loc>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://henryjtgriff.github.io/budget-birdies/shop-bundles.html</loc>
+    <loc>https://budgetbirdies.co.uk/shop-titleist.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://budgetbirdies.co.uk/shop-callaway.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://budgetbirdies.co.uk/shop-srixon.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://budgetbirdies.co.uk/shop-performance-mix.html</loc>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://henryjtgriff.github.io/budget-birdies/shop-titleist.html</loc>
+    <loc>https://budgetbirdies.co.uk/shop-value-mix.html</loc>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://henryjtgriff.github.io/budget-birdies/shop-callaway.html</loc>
+    <loc>https://budgetbirdies.co.uk/shop-brights.html</loc>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://henryjtgriff.github.io/budget-birdies/shop-srixon.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://budgetbirdies.co.uk/faq.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://henryjtgriff.github.io/budget-birdies/shop-performance-mix.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://budgetbirdies.co.uk/about.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://henryjtgriff.github.io/budget-birdies/shop-value-mix.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://budgetbirdies.co.uk/terms.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://henryjtgriff.github.io/budget-birdies/shop-brights.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://henryjtgriff.github.io/budget-birdies/faq.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://henryjtgriff.github.io/budget-birdies/about.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://budgetbirdies.co.uk/privacy.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
 </urlset>
